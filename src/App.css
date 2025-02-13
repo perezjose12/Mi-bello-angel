@@ -1,0 +1,360 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Arial", sans-serif;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+  font-family: "Righteous", sans-serif;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.screen {
+  position: absolute;
+  opacity: 0;
+}
+
+.screen-1,
+.screen-2,
+.screen-3,
+.screen-4 {
+  opacity: 1;
+}
+
+.emoji-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Asegura que ocupe toda la línea */
+  margin: 5px 0; /* Espaciado entre texto y emoji */
+}
+.message-container h1 {
+  font-size: clamp(2rem, 6vw, 5rem);
+  text-transform: none;
+  margin-bottom: 10px;
+  font-family: "Righteous", sans-serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.gif-emoji {
+  width: auto; /* Mantiene la proporción original */
+  height: 1.2em; /* Se ajusta al tamaño del texto */
+  max-height: 64px; /* Evita que sea demasiado grande */
+  display: inline-block; /* Asegura que se comporte como texto */
+  vertical-align: middle; /* Lo centra verticalmente con el texto */
+}
+.message-container p {
+  font-size: clamp(1.5rem, 3vw, 3.5rem);
+  margin-top: 0;
+  font-family: "Arial", sans-serif;
+}
+.emoji-img {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+/* Animación de rebote para los emojis */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.buttons-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* 🎨 Botón Base */
+.btn-primary {
+  padding: 12px 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-out;
+  background-size: 200% 200%;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* 🌷 Botones Tulipanes */
+.tulip-btn {
+  background-color: #9b59b6; /* Morado tulipán */
+  box-shadow: 0px 4px 10px rgba(155, 89, 182, 0.8);
+}
+
+.tulip-btn:active {
+  background-color: #6f2a59;
+}
+
+.accept-btn.tulip-btn {
+  background-color: #9b59b6;
+}
+
+.decline-btn.tulip-btn {
+  background-color: #8e44ad;
+  border: 2px solid #9b59b6;
+}
+
+/* 🌹 Botones Rosas Rojas */
+.rose-btn {
+  background-color: #c0392b; /* Rojo intenso */
+  box-shadow: 0px 4px 10px rgba(192, 57, 43, 0.8);
+}
+
+.rose-btn:active {
+  background-color: #922b21;
+}
+
+.accept-btn.rose-btn {
+  background-color: #e74c3c;
+  border: 2px solid #c0392b;
+}
+
+.decline-btn.rose-btn {
+  background-color: #c0392b;
+  border: 2px solid #e74c3c;
+}
+
+/* 🌻 Botones Girasoles */
+.sunflower-btn {
+  background-color: #f1c40f; /* Amarillo girasol */
+  color: #4a3000; /* Marrón oscuro */
+}
+
+.sunflower-btn:active {
+  background-color: #d4ac0d;
+}
+
+.accept-btn.sunflower-btn {
+  background-color: #f39c12;
+}
+
+.decline-btn.sunflower-btn {
+  background-color: #d68910;
+}
+
+/* 🎵 Estilos para el Reproductor de Música */
+.music-player {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+}
+
+/* 🔘 Botón Circular del Reproductor */
+.music-button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.music-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* 🌹 Tema Rosas */
+.roses-music-button {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  box-shadow: 0px 4px 10px rgba(192, 57, 43, 0.5);
+}
+
+.roses-music-button:hover {
+  box-shadow: 0px 6px 15px rgba(231, 76, 60, 0.7);
+}
+
+/* 🌷 Tema Tulipanes */
+.tulips-music-button {
+  background: linear-gradient(135deg, #9b59b6, #e91e63);
+  box-shadow: 0px 4px 10px rgba(155, 89, 182, 0.5);
+}
+
+.tulips-music-button:hover {
+  box-shadow: 0px 6px 15px rgba(233, 30, 99, 0.7);
+}
+
+/* 🌻 Tema Girasoles */
+.sunflowers-music-button {
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+  box-shadow: 0px 4px 10px rgba(241, 196, 15, 0.5);
+}
+
+.sunflowers-music-button:hover {
+  box-shadow: 0px 6px 15px rgba(243, 156, 18, 0.7);
+}
+
+/* 📏 Barra de Progreso - Estilos Generales */
+.progress-bar {
+  width: 120px;
+  height: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  transition: width 0.2s ease;
+}
+
+/* 🌹 Barra de Progreso - Rosas */
+.roses-progress-bar {
+  background: rgba(231, 76, 60, 0.3);
+}
+
+.roses-progress {
+  background: #e74c3c;
+}
+
+/* 🌷 Barra de Progreso - Tulipanes */
+.tulips-progress-bar {
+  background: rgba(233, 30, 99, 0.3);
+}
+
+.tulips-progress {
+  background: #e91e63;
+}
+
+/* 🌻 Barra de Progreso - Girasoles */
+.sunflowers-progress-bar {
+  background: rgba(243, 156, 18, 0.3);
+}
+
+.sunflowers-progress {
+  background: #f39c12;
+}
+.lily-btn {
+  background-color: #2980b9;
+  box-shadow: 0px 4px 10px rgba(41, 128, 185, 0.8);
+}
+
+.lily-btn:active {
+  background-color: #1a5276;
+}
+
+.accept-btn.lily-btn {
+  background-color: #3498db;
+  border: 2px solid #2980b9;
+}
+
+.decline-btn.lily-btn {
+  background-color: #2980b9;
+  border: 2px solid #3498db;
+}
+
+/* 🎵 Estilos para el Reproductor de Música */
+.music-player {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+}
+
+/* 🎶 Tema Lirios Azules */
+.lilies-music-button {
+  background: linear-gradient(135deg, #2980b9, #3498db);
+  box-shadow: 0px 4px 10px rgba(41, 128, 185, 0.5);
+}
+
+.lilies-music-button:hover {
+  box-shadow: 0px 6px 15px rgba(52, 152, 219, 0.7);
+}
+
+/* 📏 Barra de Progreso - Lirios Azules */
+.lilies-progress-bar {
+  background: rgba(52, 152, 219, 0.3);
+}
+
+.lilies-progress {
+  background: #3498db;
+}
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-1 {
+  gap: 4px; /* Puedes ajustar el espacio entre elementos */
+}
