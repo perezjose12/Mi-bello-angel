@@ -85,7 +85,7 @@ const App = () => {
                   zIndex: -1,
                 }}
               >
-                <IKContext publicKey="public_tSlmzVaaNOyClK/ZLiFxRdk4uoA=" urlEndpoint={IMAGEKIT_URL}>
+                <IKContext publicKey="public_WTMMfzmwSwX3DAucImYCcsvaJbQ=" urlEndpoint={IMAGEKIT_URL}>
                   <IKImage
                     path={bg}
                     lqip={{ active: true, quality: 20 }}
