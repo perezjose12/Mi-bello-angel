@@ -13,11 +13,11 @@ export const locales = {
   es: {
     title: "Si no lo abres, me pondré triste 😢",
 
-    greetings: `Hola {name} 😊🌞🦇`,
+    greetings: `Hola mi bello angel 😊🌞🦇`,
     ask_question: "Deseo hacerle una pregunta si no fuera mucha molestia 🤔💬",
     be_my_valentine: "¿Deseas ser mi San Valentín? 💘❤️",
     thank_you:
-      "¡Gracias mi {name} hermosa, por aceptar! No sabes lo feliz que me hace saber que compartiremos este día tan especial. 🥰🐉",
+      "¡Gracias mi bello angel, por aceptar! No sabes lo feliz que me hace saber que compartiremos este día tan especial. 🥰🐉",
     bad_mood: "¡Oh! Parece que no estás de buen humor 😔...",
     sorry: "Lo siento mucho, no era mi intención molestarla 😢...",
     final_no_response_1: "No aceptaré un no como respuesta 😤...",
